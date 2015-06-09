@@ -4,7 +4,7 @@
 		<title>WebSynthUI</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		
-		<link rel="stylesheet" type="text/css" href="resources/css/web-synth-ui.css">
+		<link rel="stylesheet" type="text/css" href="../src/css/web-synth-ui.css">
 
 		<style>
 			html, body {
@@ -13,8 +13,8 @@
 			}
 		</style>
 
-		<script type="text/javascript" src="resources/vendor/interact/interact.min.js"></script>
-		<script type="text/javascript" src="resources/js/web-synth-ui.js"></script>
+		<script type="text/javascript" src="../src/vendor/interact/interact.min.js"></script>
+		<script type="text/javascript" src="../src/js/web-synth-ui.js"></script>
 
 		<script type="text/javascript">
 			window.addEventListener('load', function() {
@@ -46,18 +46,18 @@
 		<div class="web-synth-ui knob" id="knob">
 			<div class="handle"></div>
 		</div>
-		<p id="knob-value"></p>
+		<p>Knob Value: <span id="knob-value"></span></p>
 		<h3>Segmented Switch</h3>
 		<div class="web-synth-ui switch segmented-switch" id="segmented-switch">
 			<div class="pole selected" data-value="1">1</div>
 			<div class="pole" data-value="2">2</div>
 			<div class="pole" data-value="3">3</div>
 		</div>
-		<p id="segmented-switch-state"></p>
+		<p>Segmented Switch State: <span id="segmented-switch-state"></span></p>
 		<h3>Toggle Switch</h3>
 		<div class="web-synth-ui switch toggle-switch" id="toggle-switch">
 			<div class="indicator"></div>
 		</div>
-		<p id="toggle-switch-state"></p>
+		<p>Toggle Switch State: <span id="toggle-switch-state"></span></p>
 	</body>
 </html>
