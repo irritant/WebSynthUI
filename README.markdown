@@ -125,7 +125,7 @@ The speed of rotation. Defaults to `1.0`. When set to `1.0`, the knob rotates 1 
 	// Update the switch to display and send its current state (optional):
 	switch.update();
 
-View `/demo/index.html` for examples of each control's the default behaviour.  
+View `/demo/index.html` for examples of the default behaviour for each control.  
 
 ## License
 WebSynthUI is made available under the MIT License. See LICENSE.txt for details.  
