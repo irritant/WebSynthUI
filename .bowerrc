@@ -1,4 +1,4 @@
 {
-	"directory": "resources/vendor",
+	"directory": "src/vendor",
 	"analytics": false
 }

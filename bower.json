@@ -4,7 +4,7 @@
   "authors": [
     "Tony Wallace <tony@tonywallace.com>"
   ],
-  "description": "UI components for synthesizer controls.",
+  "description": "HTML5 UI components for synthesizer controls.",
   "main": "index.html",
   "keywords": [
     "web",
@@ -20,7 +20,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "resources/vendor",
+    "src/vendor",
     "test",
     "tests"
   ]

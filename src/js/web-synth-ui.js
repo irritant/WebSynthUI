@@ -40,6 +40,11 @@ function Knob(element, options) {
 				_self.maxAngle = maxAngle;
 			}
 
+			var angle = parseFloat(element.getAttribute('data-angle'));
+			if (!isNaN(angle)) {
+				_self.angle = angle;
+			}
+
 			var minValue = parseFloat(element.getAttribute('data-min-value'));
 			if (!isNaN(minValue)) {
 				_self.minValue = minValue;
@@ -48,11 +53,6 @@ function Knob(element, options) {
 			var maxValue = parseFloat(element.getAttribute('data-max-value'));
 			if (!isNaN(maxValue)) {
 				_self.maxValue = maxValue;
-			}
-
-			var value = parseFloat(element.getAttribute('data-value'));
-			if (!isNaN(value)) {
-				_self.value = value;
 			}
 
 			var speed = parseFloat(element.getAttribute('data-speed'));
@@ -73,6 +73,11 @@ function Knob(element, options) {
 				_self.maxAngle = maxAngle;
 			}
 
+			var angle = parseFloat(options.angle);
+			if (!isNaN(angle)) {
+				_self.angle = angle;
+			}
+
 			var minValue = parseFloat(options.minValue);
 			if (!isNaN(minValue)) {
 				_self.minValue = minValue;
@@ -81,11 +86,6 @@ function Knob(element, options) {
 			var maxValue = parseFloat(options.maxValue);
 			if (!isNaN(maxValue)) {
 				_self.maxValue = maxValue;
-			}
-
-			var value = parseFloat(options.value);
-			if (!isNaN(value)) {
-				_self.value = value;
 			}
 
 			var speed = parseFloat(options.speed);
