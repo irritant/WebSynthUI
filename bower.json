@@ -23,5 +23,8 @@
     "src/vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "interact": "~1.2.4"
+  }
 }
