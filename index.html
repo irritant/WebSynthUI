@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WebSynthUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		
+		<link rel="stylesheet" type="text/css" href="resources/css/web-synth-ui.css">
+
+		<style>
+			html, body {
+				font-family: 'Helvetica Neue', 'Helvetica', 'sans-serif';
+				font-size: 1em;
+			}
+		</style>
+
+		<script type="text/javascript" src="resources/vendor/interact/interact.min.js"></script>
+		<script type="text/javascript" src="resources/js/web-synth-ui.js"></script>
+
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				window.knob = new Knob(document.getElementById('knob'), {
+					onUpdate: function(value) {
+						var rounded = Math.round(value * 1000) / 1000;
+						document.getElementById('knob-value').innerHTML = rounded;
+					}
+				}).update();
+
+				window.segmentedSwitch = new SegmentedSwitch(document.getElementById('segmented-switch'), {
+					onUpdate: function(index, value) {
+						document.getElementById('segmented-switch-state').innerHTML = value;
+					}
+				}).update();
+
+				window.toggleSwitch = new ToggleSwitch(document.getElementById('toggle-switch'), {
+					onUpdate: function(on) {
+						var state = (on) ? 'On' : 'Off';
+						document.getElementById('toggle-switch-state').innerHTML = state;
+					}
+				}).update();
+			});
+		</script>
+	</head>
+	<body>
+		<h1>WebSynthUI</h1>
+		<h3>Knob</h3>
+		<div class="web-synth-ui knob" id="knob">
+			<div class="handle"></div>
+		</div>
+		<p id="knob-value"></p>
+		<h3>Segmented Switch</h3>
+		<div class="web-synth-ui switch segmented-switch" id="segmented-switch">
+			<div class="pole selected" data-value="1">1</div>
+			<div class="pole" data-value="2">2</div>
+			<div class="pole" data-value="3">3</div>
+		</div>
+		<p id="segmented-switch-state"></p>
+		<h3>Toggle Switch</h3>
+		<div class="web-synth-ui switch toggle-switch" id="toggle-switch">
+			<div class="indicator"></div>
+		</div>
+		<p id="toggle-switch-state"></p>
+	</body>
+</html>

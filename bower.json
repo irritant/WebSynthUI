@@ -1,0 +1,27 @@
+{
+  "name": "WebSynthUI",
+  "version": "1.0",
+  "authors": [
+    "Tony Wallace <tony@tonywallace.com>"
+  ],
+  "description": "UI components for synthesizer controls.",
+  "main": "index.html",
+  "keywords": [
+    "web",
+    "ui",
+    "user interface",
+    "synth",
+    "controls",
+    "music"
+  ],
+  "license": "MIT",
+  "homepage": "tonywallace.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/vendor",
+    "test",
+    "tests"
+  ]
+}
