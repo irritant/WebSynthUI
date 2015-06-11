@@ -16,6 +16,10 @@ function Knob(element, options) {
 		return Math.min(Math.max(angle, _self.minAngle), _self.maxAngle);
 	};
 
+	this.limitValue = function(value) {
+		return Math.min(Math.max(value, _self.minValue), _self.maxValue);
+	};
+
 	this.init = function(options) {
 
 		if (_self.element) {
@@ -55,10 +59,16 @@ function Knob(element, options) {
 				_self.maxValue = maxValue;
 			}
 
+			var value = parseFloat(element.getAttribute('data-value'));
+			if (!isNaN(value)) {
+				_self.angle = _self.angleFromValue(value);
+			}
+
 			var speed = parseFloat(element.getAttribute('data-speed'));
 			if (!isNaN(speed)) {
 				_self.speed = speed;
 			}
+
 		}
 
 		// Update properties from options:
@@ -86,6 +96,11 @@ function Knob(element, options) {
 			var maxValue = parseFloat(options.maxValue);
 			if (!isNaN(maxValue)) {
 				_self.maxValue = maxValue;
+			}
+
+			var value = parseFloat(options.value);
+			if (!isNaN(value)) {
+				_self.value = _self.angleFromValue(value);
 			}
 
 			var speed = parseFloat(options.speed);
@@ -127,6 +142,15 @@ function Knob(element, options) {
 		var valueRange = _self.maxValue - _self.minValue;
 		var value = (valueRange * anglePercent) + _self.minValue;
 		return value;
+	};
+
+	this.angleFromValue = function(value) {
+		value = _self.limitValue(value);
+		var valueRange = _self.maxValue - _self.minValue;
+		var valuePercent = 1.0 / (valueRange / (value - _self.minValue));
+		var angleRange = _self.maxAngle - _self.minAngle;
+		var angle = (angleRange * valuePercent) + _self.minAngle;
+		return angle;
 	};
 
 	return this.init(options);

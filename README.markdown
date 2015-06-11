@@ -43,6 +43,7 @@ The `Knob()` constructor accepts several options:
 		angle: -135.0,
 		minValue: 0.0,
 		maxValue: 1.0,
+		value: 0.0,
 		speed: 1.0,
 		onUpdate: function(value) {
 			...
@@ -57,6 +58,7 @@ Options may also be provided as data attributes:
 		data-angle="-135" 
 		data-min-value="0" 
 		data-max-value="1" 
+		data-value="0" 
 		data-speed="1">
 		<div class="handle"></div>
 	</div>
@@ -77,6 +79,9 @@ The value produced when the knob is rotated fully to the left. Defaults to `0.0`
 
 ##### maxValue (data-max-value): 
 The value produced when the knob is rotated fully to the right. Defaults to `1.0`.  
+
+##### value (data-value): 
+The initial value. This will be converted to the appropriate angle and will take precedence over the `angle` option. 
 
 ##### speed (data-speed): 
 The speed of rotation. Defaults to `1.0`. When set to `1.0`, the knob rotates 1 degree per pixel of mouse movement. Values below `1.0` slow the rotation down and make the knob feel less responsive but more accurate. Values above `1.0` speed the rotation up and make the knob feel more responsve but less accurate.  
